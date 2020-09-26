@@ -1,2 +1,0 @@
-def unauthorized():
-	return 'unauthorized'
