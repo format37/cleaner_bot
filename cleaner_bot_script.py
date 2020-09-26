@@ -5,7 +5,8 @@ def cleaner_bot_unauthorized():
 	return 'unauthorized'
 
 def cleaner_bot_stats():
-	df_full = pd.read_csv('data.csv')
+	script_path = '/home/format37_gmail_com/projects/cleaner_bot/'
+	df_full = pd.read_csv(script_path+'data.csv')
 	df = pd.DataFrame()
 	df['user']=df_full['user']
 	df['Посуда']=df_full['Посуда']
@@ -14,6 +15,6 @@ def cleaner_bot_stats():
 	df = df.set_index('user')
 	heat_map = sns.heatmap(df, annot=True, cmap="YlGnBu")
 	fig = heat_map.get_figure()	
-	filepath = "/home/format37_gmail_com/projects/cleaner_bot/images/heat_map.png"
+	filepath = script_path+"images/heat_map.png"
 	fig.savefig(filepath)
 	return filepath
