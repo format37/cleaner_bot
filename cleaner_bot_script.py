@@ -1,3 +1,5 @@
+import telebot
+
 def cleaner_bot_init(WEBHOOK_HOST,WEBHOOK_PORT,WEBHOOK_SSL_CERT, SCRIPT_PATH):
 
 	with open(SCRIPT_PATH+'token.key','r') as file:
