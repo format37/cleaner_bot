@@ -1,4 +1,4 @@
-Посуда,Мусор,Туалет,user,account_name,account_id
-0,1,1,Ирина,@IrinaYurasova,38470768
-1,1,0,Дмитрий,@format837,70753233
-1,0,1,Алексей,@format37,106129214
+user,account_name,account_id,Посуда,Мусор,Туалет
+Ирина,@IrinaYurasova,384707680,0,1,1
+Дмитрий,@format837,70753233,1,1,0
+Алексей,@format37,106129214,1,0,1
