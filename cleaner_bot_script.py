@@ -2,6 +2,7 @@ import pandas as pd
 import seaborn as sns
 	
 def cleaner_bot_user_authorized(id):
+	script_path = '/home/format37_gmail_com/projects/cleaner_bot/'
 	df_full = pd.read_csv(script_path+'data.csv')		
 	return id in df_full.account_id.to_list()
 
