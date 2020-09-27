@@ -17,7 +17,7 @@ def cleaner_bot_counter_minus(account_id,script_path,task):
 		df_full.to_csv(script_path+'data.csv',index = None)
 		answer = task+' -1'
 	else:
-		answer = 'задача "'+task+'" не найдена'
+		answer = 'task not found: "'+task+'"'
 	return answer
 
 def cleaner_bot_alert(script_path,task):	
@@ -39,9 +39,9 @@ def cleaner_bot_stat(script_path):
 	df_full			= pd.read_csv(script_path+'data.csv')
 	df				= pd.DataFrame()
 	df['user']		= df_full['user']
-	df['посуда']	= df_full['посуда']
-	df['мусор']		= df_full['мусор']
-	df['туалет']	= df_full['туалет']
+	df['dish']		= df_full['dish']
+	df['garbage']	= df_full['garbage']
+	df['toilet']	= df_full['toilet']
 	df 				= df.set_index('user')		
 	fig 			= plt.figure() # clean
 	heat_map		= sns.heatmap(df, annot=True, cmap="pink", cbar = False)
@@ -51,5 +51,5 @@ def cleaner_bot_stat(script_path):
 	return image_path
 
 def cleaner_bot_user_authorized(account_id,script_path):
-	df_full = pd.read_csv(script_path+'data.csv')		
+	df_full = pd.read_csv(script_path+'data.csv')
 	return str(account_id) in [str(i) for i in df_full.account_id.to_list()]
