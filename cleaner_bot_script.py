@@ -5,7 +5,7 @@ def cleaner_bot_counter_plus(account_id,script_path,task):
 	df_full = pd.read_csv(script_path+'data.csv')
 	current_value = int(df_full[df_full.account_id==account_id][task])
 	df_full.loc[(df_full.account_id==account_id),task]=current_value+1
-	df_full.to_csv('data.csv',index = None)
+	df_full.to_csv(script_path+'data.csv',index = None)
 	return task+' +1'
 
 def cleaner_bot_alert(script_path,task):	
