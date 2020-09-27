@@ -31,10 +31,10 @@ def cleaner_bot_stat(script_path):
 	df['мусор']		= df_full['мусор']
 	df['туалет']	= df_full['туалет']
 	df 				= df.set_index('user')
-	heat_map		= sns.heatmap(df, annot=True, cmap="YlGnBu")
+	heat_map		= sns.heatmap(df, annot=True, cmap="YlGnBu", cbar = False)
 	fig				= heat_map.get_figure()	
-	with open(script_path+'images/heat_map.png', 'w'):
-		pass
+	#with open(script_path+'images/heat_map.png', 'w'):
+	#	pass
 	filepath		= script_path+'images/heat_map.png'
 	fig.savefig(filepath)
 	return filepath
