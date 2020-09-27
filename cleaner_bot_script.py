@@ -11,7 +11,7 @@ def cleaner_bot_user_authorized(user_id,script_path):
 	df_full = pd.read_csv(script_path+'data.csv')		
 	return str(user_id) in [str(i) for i in df_full.account_id.to_list()]
 
-def cleaner_bot_stats(script_path):
+def cleaner_bot_stat(script_path):
 	#script_path = '/home/format37_gmail_com/projects/cleaner_bot/'
 	df_full = pd.read_csv(script_path+'data.csv')
 	df = pd.DataFrame()
