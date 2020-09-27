@@ -1,15 +1,15 @@
 import pandas as pd
 import seaborn as sns
 
-def cleaner_bot_alert(id,script_path):
+def cleaner_bot_alert(user_id,script_path):
 	#script_path = '/home/format37_gmail_com/projects/cleaner_bot/'
 	#df_full = pd.read_csv(script_path+'data.csv')
-	return 'k'#str(id) in [str(i) for i in df_full.account_id.to_list()]
+	return 'u '+str(user_id)#str(id) in [str(i) for i in df_full.account_id.to_list()]
 
-def cleaner_bot_user_authorized(id,script_path):
+def cleaner_bot_user_authorized(user_id,script_path):
 	#script_path = '/home/format37_gmail_com/projects/cleaner_bot/'
 	df_full = pd.read_csv(script_path+'data.csv')		
-	return str(id) in [str(i) for i in df_full.account_id.to_list()]
+	return str(user_id) in [str(i) for i in df_full.account_id.to_list()]
 
 def cleaner_bot_stats(script_path):
 	#script_path = '/home/format37_gmail_com/projects/cleaner_bot/'
