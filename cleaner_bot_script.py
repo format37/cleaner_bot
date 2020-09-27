@@ -1,8 +1,8 @@
 import pandas as pd
 import seaborn as sns
 
-def cleaner_bot_alert(user_id,task):	
-	df_full				= pd.read_csv('data.csv')
+def cleaner_bot_alert(user_id,script_path,task):	
+	df_full				= pd.read_csv(script_path+'data.csv')
 	df					= pd.DataFrame()
 	df['user']			= df_full['user']
 	df['account_name']	= df_full['account_name']
