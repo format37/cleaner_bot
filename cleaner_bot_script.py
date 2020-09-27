@@ -36,7 +36,7 @@ def cleaner_bot_stat(script_path):
 	fig				= heat_map.get_figure()	
 	image_path = script_path+'images/heat_map.png'
 	if os.path.exists(image_path):
-    	os.remove(image_path)
+		os.remove(image_path)
 	fig.savefig(image_path)
 	return image_path
 
