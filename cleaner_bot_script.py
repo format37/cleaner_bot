@@ -33,7 +33,9 @@ def cleaner_bot_stat(script_path):
 	df 				= df.set_index('user')
 	heat_map		= sns.heatmap(df, annot=True, cmap="YlGnBu")
 	fig				= heat_map.get_figure()	
-	filepath		= script_path+"images/heat_map.png"
+	with open(script_path+'images/heat_map.png', 'w'):
+		pass
+	filepath		= script_path+'images/heat_map.png'
 	fig.savefig(filepath)
 	return filepath
 
