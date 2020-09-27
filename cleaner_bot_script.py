@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn as sns
-import os
+#import os
+import matplotlib.pyplot as plt
 
 def cleaner_bot_counter_plus(account_id,script_path,task):
 	df_full = pd.read_csv(script_path+'data.csv')
@@ -31,11 +32,12 @@ def cleaner_bot_stat(script_path):
 	df['посуда']	= df_full['посуда']
 	df['мусор']		= df_full['мусор']
 	df['туалет']	= df_full['туалет']
-	df 				= df.set_index('user')
-	heat_map		= sns.heatmap(df, annot=True, cmap="YlGnBu", cbar = False)
+	df 				= df.set_index('user')	
+	#heat_map		= sns.heatmap(df, annot=True, cmap="YlGnBu", cbar = False)
 	# clear ++
-	fig				= heat_map.get_figure()	
-	fig.clf()
+	#fig				= heat_map.get_figure()	
+	#fig.clf()
+	fig 			= plt.figure()
 	# clear --
 	fig 			= heat_map.get_figure()	
 	image_path = script_path+'images/heat_map.png'	
