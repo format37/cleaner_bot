@@ -1,6 +1,5 @@
 import pandas as pd
 import seaborn as sns
-#import os
 import matplotlib.pyplot as plt
 
 def cleaner_bot_counter_plus(account_id,script_path,task):
@@ -11,11 +10,15 @@ def cleaner_bot_counter_plus(account_id,script_path,task):
 	return task+' +1'
 
 def cleaner_bot_counter_minus(account_id,script_path,task):
-	df_full = pd.read_csv(script_path+'data.csv')
-	current_value = int(df_full[df_full.account_id==account_id][task])
-	df_full.loc[(df_full.account_id==account_id),task]=current_value-1
-	df_full.to_csv(script_path+'data.csv',index = None)
-	return task+' -1'
+	if task in df_full.columns:
+		df_full = pd.read_csv(script_path+'data.csv')
+		current_value = int(df_full[df_full.account_id==account_id][task])
+		df_full.loc[(df_full.account_id==account_id),task]=current_value-1
+		df_full.to_csv(script_path+'data.csv',index = None)
+		answer = task+' -1'
+	else:
+		answer = 'задача "'+task+'" не найдена'
+	return answer
 
 def cleaner_bot_alert(script_path,task):	
 	df_full				= pd.read_csv(script_path+'data.csv')
