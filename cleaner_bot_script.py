@@ -32,17 +32,11 @@ def cleaner_bot_stat(script_path):
 	df['посуда']	= df_full['посуда']
 	df['мусор']		= df_full['мусор']
 	df['туалет']	= df_full['туалет']
-	df 				= df.set_index('user')	
-	# clear ++
-	#fig				= heat_map.get_figure()	
-	#fig.clf()
-	fig 			= plt.figure()
-	# clear --
-	heat_map		= sns.heatmap(df, annot=True, cmap="YlGnBu", cbar = False)
+	df 				= df.set_index('user')		
+	fig 			= plt.figure() # clean
+	heat_map		= sns.heatmap(df, annot=True, cmap="pink", cbar = False)
 	fig 			= heat_map.get_figure()	
 	image_path = script_path+'images/heat_map.png'	
-	#if os.path.exists(image_path):
-	#	os.remove(image_path)
 	fig.savefig(image_path)
 	return image_path
 
