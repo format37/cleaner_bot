@@ -42,6 +42,7 @@ def cleaner_bot_stat(script_path):
 	df['dish']		= df_full['dish']
 	df['garbage']	= df_full['garbage']
 	df['toilet']	= df_full['toilet']
+	df['dry']		= df_full['dry']
 	df 				= df.set_index('user')		
 	fig 			= plt.figure() # clean
 	heat_map		= sns.heatmap(df, annot=True, cmap="pink", cbar = False)
